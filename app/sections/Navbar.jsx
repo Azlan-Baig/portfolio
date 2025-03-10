@@ -1,7 +1,18 @@
 "use client";
 import React, { useState } from 'react'
-import NavItems from '../components/NavItems';
+import { navLinks } from '../constants';
 const Navbar = () => {
+  const NavItems = ({ onClick = () => {} }) => (
+    <ul className="nav-ul">
+      {navLinks.map((item) => (
+        <li key={item.id} className="nav-li">
+          <a href={item.href} className="nav-li_a" onClick={onClick}>
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -30,7 +41,7 @@ const Navbar = () => {
 
       <div className={`nav-sidebar ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
         <nav className="p-5">
-          <NavItems onClick={closeMenu} />
+          <NavItems onClick={closeMenu } />
         </nav>
       </div>
     </header>

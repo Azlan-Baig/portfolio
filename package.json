@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "@react-three/drei": "^10.0.4",
+    "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^9.0.4",
     "gsap": "^3.12.7",
     "leva": "^0.10.0",

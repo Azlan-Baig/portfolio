@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
+import Navbar from "./sections/Navbar";
 
 function Home() {
   return (

@@ -1,9 +1,16 @@
-import React from 'react'
-
-function Navitems() {
+import React from "react";
+import { navLinks } from "../constants";
+import Link from "next/link";
+function NavItems() {
   return (
-    <div>Navitems</div>
-  )
+    <ul className="nav-ul">
+      {navLinks.map(({ id, name, href }) => (
+        <li key={id} className="nav-li">
+          <Link href={href} className="nav-li_a">{name}</Link>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-export default Navitems
+export default NavItems;

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react'
-import NavItems from '../components/NavItems';
+import NavItems from '../components/NavItems.jsx';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 

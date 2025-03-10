@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from 'react'
-import NavItems from '../components/NavItems.jsx';
 const Navbar = () => {
   const NavItems = ({ onClick = () => {} }) => (
     <ul className="nav-ul">

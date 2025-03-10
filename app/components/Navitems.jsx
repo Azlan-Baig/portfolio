@@ -1,7 +1,8 @@
 import React from "react";
 import { navLinks } from "../constants";
 import Link from "next/link";
-function NavItems() {
+
+const NavItems = () => {
   return (
     <ul className="nav-ul">
       {navLinks.map(({ id, name, href }) => (
@@ -10,7 +11,7 @@ function NavItems() {
         </li>
       ))}
     </ul>
-  );
+  )
 }
 
-export default NavItems;
+export default NavItems

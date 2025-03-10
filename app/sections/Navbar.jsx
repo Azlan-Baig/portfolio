@@ -2,6 +2,17 @@
 import React, { useState } from 'react'
 import NavItems from '../components/NavItems.jsx';
 const Navbar = () => {
+  const NavItems = ({ onClick = () => {} }) => (
+    <ul className="nav-ul">
+      {navLinks.map((item) => (
+        <li key={item.id} className="nav-li">
+          <a href={item.href} className="nav-li_a" onClick={onClick}>
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);

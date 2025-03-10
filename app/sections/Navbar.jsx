@@ -23,7 +23,7 @@ const Navbar = () => {
           </button>
 
           <nav className="sm:flex hidden">
-            <NavItems />
+            <NavItems/>
           </nav>
         </div>
       </div>

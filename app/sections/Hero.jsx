@@ -8,6 +8,8 @@ import { Leva, useControls } from "leva";
 import { calculateSizes } from "../constants";
 import { useMediaQuery } from "react-responsive";
 import HeroCamera from "../components/HeroCamera";
+import Target from "../components/Target";
+import ReactLogo from "../components/ReactLogo";
 
 const Hero = () => {
   // const controls = useControls('HeyHey',{
@@ -36,19 +38,27 @@ const Hero = () => {
           Building Products & Brands
         </p>
       </div>
-        <Leva hidden/>
+      <Leva hidden />
       <div className="w-full h-full absolute inset-0">
         <Canvas className="w-full h-full ">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
             <HeroCamera isMobile={isMobile}>
-            <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1,-Math.PI,0]} />
+              <HackerRoom
+                scale={sizes.deskScale}
+                position={sizes.deskPosition}
+                rotation={[0.1, -Math.PI, 0]}
+              />
             </HeroCamera>
+            <group>
+              <Target position={sizes.targetPosition} rotation={[0,Math.PI/5,0]} />
+              <ReactLogo position={sizes.reactLogoPosition} />
+            </group>
             <ambientLight intensity={1} />
-            <directionalLight position={[10,10,10]} intensity={0.5} /> 
+            <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
         </Canvas>
-      </div>f
+      </div>
     </section>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 import React, { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
-import { PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera, Ring } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { HackerRoom } from "../components/HackerRoom";
 import { Leva, useControls } from "leva";
@@ -10,7 +10,10 @@ import { useMediaQuery } from "react-responsive";
 import HeroCamera from "../components/HeroCamera";
 import Target from "../components/Target";
 import ReactLogo from "../components/ReactLogo";
-
+import Cube from "../components/Cube";
+import Rings from "../components/Ring";
+import Button from "../components/Button";
+import Link from "next/link";
 const Hero = () => {
   // const controls = useControls('HeyHey',{
   //   scaleX: { value: 1, min: -10, max: 10 },
@@ -39,7 +42,7 @@ const Hero = () => {
         </p>
       </div>
       <Leva hidden />
-      <div className="w-full h-full absolute inset-0">
+      <div className="w-full h-full absolute inset-0 mt-9">
         <Canvas className="w-full h-full ">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
@@ -53,11 +56,19 @@ const Hero = () => {
             <group>
               <Target position={sizes.targetPosition} rotation={[0,Math.PI/5,0]} />
               <ReactLogo position={sizes.reactLogoPosition} />
+              <Cube position={sizes.cubePosition} />
+              <Rings position={sizes.ringPosition} />
             </group>
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
         </Canvas>
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+        <Link href={'#contact'} >
+        <Button name={"Let's Work Togerther"} isBeam={true} containerClass="sm:w-fit w-full sm:min-w-96" />
+        </Link>
+      </div>
+
       </div>
     </section>
   );

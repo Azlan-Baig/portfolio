@@ -1,18 +1,23 @@
+"use client"
 import React, { useState } from "react";
-import Globe from "react-globe.gl";
 import Button from "../components/Button";
+import dynamic from "next/dynamic";
 
 const About = () => {
+  const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
+
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('azlanbaig.dev@gmail.com');
-    setHasCopied(true);
-
-    setTimeout(() => {
-      setHasCopied(false);
-    }, 2000);
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText("azlanbaig.dev@gmail.com")
+        .then(() => setHasCopied(true))
+        .catch(err => console.error("Clipboard error:", err));
+  
+      setTimeout(() => setHasCopied(false), 2000);
+    }
   };
+  
   return (
     <section className="c-space my-20">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-col-2 grid-cols-1 gap-5 h-full">
@@ -73,7 +78,7 @@ const About = () => {
                 I’m very flexible with time zone communications & locations
               </p>
               <p className="grid-subtext">
-                I&apos;m based in Rjieka, Croatia and open to remote work
+                I&apos;m based in Karachi, Pakistan and open to remote work
                 worldwide.
               </p>
               <Button name="Contact Me" isBeam containerClass="w-full mt-10" />

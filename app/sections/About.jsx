@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Button from "../components/Button";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const About = () => {
   const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
@@ -10,14 +11,15 @@ const About = () => {
 
   const handleCopy = () => {
     if (typeof navigator !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText("azlanbaig.dev@gmail.com")
+      navigator.clipboard
+        .writeText("azlanbaig.dev@gmail.com")
         .then(() => setHasCopied(true))
-        .catch(err => console.error("Clipboard error:", err));
-  
+        .catch((err) => console.error("Clipboard error:", err));
+
       setTimeout(() => setHasCopied(false), 2000);
     }
   };
-  
+
   return (
     <section className="c-space my-20">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-col-2 grid-cols-1 gap-5 h-full">
@@ -81,19 +83,30 @@ const About = () => {
                 I&apos;m based in Karachi, Pakistan and open to remote work
                 worldwide.
               </p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              <Link href={"#contact"}>
+                <Button
+                  name="Contact Me"
+                  isBeam
+                  containerClass="w-full mt-10"
+                />
+              </Link>
             </div>
           </div>
         </div>
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
+            <img
+              src="assets/grid3.png"
+              alt="grid-3"
+              className="w-full sm:h-[266px] h-fit object-contain"
+            />
 
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
               <p className="grid-subtext">
-                I love solving problems and building things through code. Programming isn&apos;t just my
-                profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
+                I love solving problems and building things through code.
+                Programming isn&apos;t just my profession—it&apos;s my passion.
+                I enjoy exploring new technologies, and enhancing my skills.
               </p>
             </div>
           </div>
@@ -109,8 +122,13 @@ const About = () => {
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>
               <div className="copy-container" onClick={handleCopy}>
-                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">azlanbaig.dev@gmail.com</p>
+                <img
+                  src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
+                  alt="copy"
+                />
+                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">
+                  azlanbaig.dev@gmail.com
+                </p>
               </div>
             </div>
           </div>

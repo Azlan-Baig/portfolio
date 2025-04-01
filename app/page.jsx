@@ -3,6 +3,7 @@ import React from "react";
 import Hero from "./sections/Hero";
 import Navbar from "./sections/Navbar";
 import About from "./sections/About";
+import Projects from "./sections/Projects";
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <Navbar />
       <Hero/>
       <About/>
+      <Projects/>
     </main>
   );
 }

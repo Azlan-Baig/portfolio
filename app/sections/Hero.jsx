@@ -54,7 +54,7 @@ const Hero = () => {
               />
             </HeroCamera>
             <group>
-              <Target position={sizes.targetPosition} rotation={[0,Math.PI/5,0]} />
+              <Target className= "mb-8" position={sizes.targetPosition} rotation={[0,Math.PI/5,0]} />
               <ReactLogo position={sizes.reactLogoPosition} />
               <Cube position={sizes.cubePosition} />
               <Rings position={sizes.ringPosition} />
@@ -63,7 +63,7 @@ const Hero = () => {
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
         </Canvas>
-      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space pt-9">
         <Link href={'#contact'} >
         <Button name={"Let's Work Togerther"} isBeam={true} containerClass="sm:w-fit w-full sm:min-w-96" />
         </Link>

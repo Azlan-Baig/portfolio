@@ -245,13 +245,13 @@ export const navLinks = [
       ],
     },
     {
-      title: `Impleko-Ai - Turn Ideas into SaaS MVPs with “No Code” Solutions`,
+      title: `Impleko-Ai - Building Apps the No-Code Impleko Way `,
       desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
       subdesc:
         'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
       href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
       texture: '/textures/project/project5.mp4',
-      logo: '/assets/project-logo5.png',
+      logo: 'https://cdn.sanity.io/images/v1m04ogh/production/2f58fdb01216552fe806a4d185bd9cca83c5fd86-164x67.svg',
       logoStyle: {
         backgroundColor: '#1C1A43',
         border: '0.2px solid #252262',
